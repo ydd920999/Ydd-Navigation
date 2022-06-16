@@ -1,0 +1,12 @@
+<template>
+    <RouterView />
+</template>
+
+<style>
+    html,
+    body,
+    .root {
+        height: 100%;
+        background-color: #fff !important;
+    }
+</style>
