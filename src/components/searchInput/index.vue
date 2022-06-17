@@ -1,7 +1,13 @@
 <template>
     <div class="search">
         <div class="searchBox">
-            <el-input v-model="input" placeholder="有问题找度娘" clearable @input="inputChange" />
+            <el-input
+                v-model="input"
+                placeholder="有问题找度娘"
+                clearable
+                @input="inputChange"
+                @keyup.enter.native="searchBtn"
+            />
             <el-button type="primary" @click="searchBtn">百度一下</el-button>
         </div>
         <div v-if="ulData.length" class="ulBox">
@@ -21,7 +27,7 @@
     const input = ref('');
     const ulData = ref([]);
     function searchBtn() {
-        location.href = 'http://www.baidu.com/s?wd=' + input.value;
+        window.open(`http://www.baidu.com/s?wd= + ${input.value}`, '_blank');
     }
     function inputChange(val: string) {
         jsonp(
@@ -38,9 +44,8 @@
     (window['fn'] as any) = (data: any) => {
         ulData.value = data.s;
     };
-    function addList(item) {
-        location.href = 'http://www.baidu.com/s?wd=' + item;
-        console.log(item);
+    function addList(item: string) {
+        window.open(`https://www.baidu.com/s?wd= + ${item} `, '_blank');
     }
 </script>
 <style lang="less" setup>
@@ -52,6 +57,9 @@
         align-items: center;
         padding-top: 10px;
         box-sizing: border-box;
+        // background: url(../../assets/backimg.png);
+        // background-repeat: no-repeat;
+        // background-size: 100% 100%;
         .searchBox {
             width: 500px;
             display: flex;

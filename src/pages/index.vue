@@ -1,24 +1,36 @@
 <template>
-    <img alt="Vue logo" src="./../assets/logo.png" />
-    <UsePinia />
-    <br />
-    <router-link to="/login">点击跳转至login</router-link>
-    <br /><br />
-    <router-link to="/vueUse">点击跳转至vueUse页面</router-link>
-    <br /><br />
-    <router-link to="/request">点击跳转至request请求页面</router-link>
-    <br /><br />
-    <router-link to="/ydd">点击跳转至top</router-link>
+    <SearchInput />
 </template>
 
-<script lang="ts">
-    import { defineComponent } from 'vue';
+<script lang="ts" setup>
+    import { ref, computed, onMounted } from 'vue';
     import UsePinia from '@/components/UsePinia.vue';
+    import SearchInput from '@/components/searchInput/index.vue';
+    import { UserService } from '/src/api/api.ts';
+    import request from '@/utils/axios';
+    // import API from '@/api';
 
-    export default defineComponent({
-        name: 'IndexPage',
-        components: {
-            UsePinia
-        }
+    onMounted(() => {
+        fetchPageData();
+        requestRes();
     });
+    async function fetchPageData() {
+        const loginParams = {
+            limit: 12
+        };
+        const res = await UserService.geiInterviewList(loginParams);
+        console.log(res);
+    }
+    const requestRes = async () => {
+        const loginParams = {
+            limit: 12
+        };
+        let result = await request({
+            url: '/the.top/api/v1/item/weibo',
+            method: 'get',
+            params: loginParams
+        });
+
+        console.log(result);
+    };
 </script>
