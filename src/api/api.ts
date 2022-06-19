@@ -45,6 +45,10 @@ export class UserService {
             params
         });
     }
+    //
+    static geiweiboHot() {
+        return request('https://api.emoao.com/api/wbrs', {} as unknown as undefined, 'get');
+    }
 }
 
 export class landRelevant {

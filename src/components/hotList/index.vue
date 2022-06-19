@@ -10,25 +10,25 @@
                     </span>
                 </div>
             </template>
-            <div v-for="(item, index) in Data" :key="item.note" class="item">
-                <div class="ellipsislink" @click="goWeibo(item.note)">
+            <div v-for="(item, index) in Data" :key="item.title" class="item">
+                <div class="ellipsislink" @click="goWeibo(item.title)">
                     <el-tooltip
                         class="box-item"
                         effect="dark"
-                        :content="item.note"
+                        :content="item.title"
                         placement="bottom"
                     >
-                        <a>{{ index + 1 + '、' + item.note }}</a>
+                        <a>{{ index + 1 + '、' + item.title }}</a>
                     </el-tooltip>
                 </div>
-                <span v-if="item.num" class="hot">
+                <span v-if="item.heatnum" class="hot">
                     {{
-                        item.num.toString().length == 7
-                            ? Math.round(item.num.toString().slice(0, 3)) + '万'
-                            : Math.round(item.num.toString().slice(0, 2)) + '万'
+                        item.heatnum.toString().length == 7
+                            ? Math.round(item.heatnum.toString().slice(0, 3)) + '万'
+                            : Math.round(item.heatnum.toString().slice(0, 2)) + '万'
                     }}
                 </span>
-                <div v-if="item.label_name != ''" class="tab">
+                <!-- <div v-if="item.label_name != ''" class="tab">
                     <span
                         :class="
                             item.label_name === '爆'
@@ -39,7 +39,7 @@
                         "
                         >{{ item.label_name }}</span
                     >
-                </div>
+                </div> -->
             </div>
         </el-card>
     </div>

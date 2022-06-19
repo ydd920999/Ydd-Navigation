@@ -1,7 +1,7 @@
 <template>
     <div class="container">
         <SearchInput />
-        <HotList :list="hotList" @refresh="weiboHot" />
+        <HotList :list="weiboData" @refresh="weibo" />
     </div>
 </template>
 
@@ -15,8 +15,10 @@
 
     const moyuUrl = ref('');
     const hotList = ref<any>([]);
+    const weiboData = ref<any>([]);
     onMounted(() => {
         weiboHot();
+        weibo();
         // moyu();
         // yiyan();
         // lishiDay();
@@ -37,6 +39,14 @@
                 })
                 .slice(0, 10);
         }
+    }
+    async function weibo() {
+        const res = await UserService.geiweiboHot();
+        if (res.status == '200') {
+            const data = res.data;
+            weiboData.value = data.slice(0, 10);
+        }
+        console.log(res, 'sdsadas');
     }
     async function yiyan() {
         const res = await UserService.geteveryYan({ type: 'djt' });
@@ -59,7 +69,9 @@
         flex-direction: column;
         padding: 8px;
         box-sizing: border-box;
-        background: url(@/assets/wallhaven-nk6l8m_2560x1440.png);
+        // background: url(@/assets/wallhaven-nk6l8m_2560x1440.png);//老虎
+        background: url(@/assets/wallhaven-g8rd8d_2560x1440.png); //云
+
         background-repeat: no-repeat;
         background-size: 100% 100%;
         & > :first-child {
