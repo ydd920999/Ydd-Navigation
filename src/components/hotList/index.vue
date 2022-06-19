@@ -11,7 +11,16 @@
                 </div>
             </template>
             <div v-for="(item, index) in Data" :key="item.note" class="item">
-                <span @click="goWeibo(item.note)"> {{ index + 1 + '、' + item.note }}</span>
+                <div class="ellipsislink" @click="goWeibo(item.note)">
+                    <el-tooltip
+                        class="box-item"
+                        effect="dark"
+                        :content="item.note"
+                        placement="bottom"
+                    >
+                        <a>{{ index + 1 + '、' + item.note }}</a>
+                    </el-tooltip>
+                </div>
                 <span v-if="item.num" class="hot">
                     {{
                         item.num.toString().length == 7
@@ -45,7 +54,7 @@
     const Data = computed(() => {
         return props?.list;
     });
-    function goWeibo(name) {
+    function goWeibo(name: string) {
         const url = `https://s.weibo.com/weibo?q=%23${name}%23`;
         window.open(url, '_blank');
     }
@@ -83,6 +92,21 @@
         display: flex;
         align-items: center;
         padding-bottom: 2px;
+        .ellipsislink {
+            width: 230px;
+            a {
+                width: 100%;
+                font-size: 15px;
+                font-family: PingFangSC-Medium, PingFang SC;
+                font-weight: 600;
+                color: #333333;
+                overflow: hidden;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+                display: block;
+                cursor: pointer;
+            }
+        }
         .tab {
             width: 20px;
             display: inline-block;
