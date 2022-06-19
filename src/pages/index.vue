@@ -3,7 +3,7 @@
         <div>
             <SearchInput />
         </div>
-        <div class="HotBox"><HotList :list="hotList" /> </div>
+        <div class="HotBox"><HotList :list="hotList" @refresh="weiboHot" /> </div>
     </div>
 </template>
 

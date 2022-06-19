@@ -37,7 +37,7 @@
 </template>
 <script lang="ts" setup>
     import { computed } from 'vue';
-
+    const $emit = defineEmits(['refresh']);
     const props = defineProps<{
         list?: any;
     }>();
@@ -50,7 +50,7 @@
         window.open(url, '_blank');
     }
     function refresh() {
-        console.log('刷新');
+        $emit('refresh');
     }
 </script>
 <style lang="less" scoped>
