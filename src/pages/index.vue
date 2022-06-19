@@ -17,7 +17,7 @@
     const hotList = ref<any>([]);
     const weiboData = ref<any>([]);
     onMounted(() => {
-        weiboHot();
+        // weiboHot();
         weibo();
         // moyu();
         // yiyan();

@@ -28,18 +28,18 @@
                             : Math.round(item.heatnum.toString().slice(0, 2)) + '万'
                     }}
                 </span>
-                <!-- <div v-if="item.label_name != ''" class="tab">
+                <div v-if="item.labelname" class="tab">
                     <span
                         :class="
-                            item.label_name === '爆'
+                            item.labelname === '爆'
                                 ? 'bao'
-                                : item.label_name === '新'
+                                : item.labelname === '新'
                                 ? 'xin'
                                 : 'fei'
                         "
-                        >{{ item.label_name }}</span
+                        >{{ item.labelname }}</span
                     >
-                </div> -->
+                </div>
             </div>
         </el-card>
     </div>
