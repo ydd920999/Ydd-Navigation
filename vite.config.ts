@@ -20,9 +20,18 @@ export default defineConfig({
         // 设置代理
         proxy: {
             '/api': {
-                target: 'your https address',
+                target: 'https://weibo.com',
                 changeOrigin: true,
-                rewrite: (path: string) => path.replace(/^\/api/, '')
+                rewrite: (path: string) => path.replace(/^\/api/, ''),
+                ws: true, //是否代理 websockets
+                secure: true
+            },
+            '/top': {
+                target: 'https://the.top',
+                changeOrigin: true,
+                rewrite: (path: string) => path.replace(/^\/top/, ''),
+                ws: true, //是否代理 websockets
+                secure: true
             }
         }
     }

@@ -1,5 +1,4 @@
 import axios, { AxiosResponse, AxiosRequestConfig } from 'axios';
-
 const service = axios.create();
 
 // Request interceptors
@@ -25,5 +24,29 @@ service.interceptors.response.use(
         return Promise.reject(error);
     }
 );
+const downFile = axios.create({
+    // baseURL: process.env.VUE_APP_API_PREFIX,
+    withCredentials: false,
+    responseType: 'blob',
+    headers: {
+        'Content-Type': 'application/json'
+        // clientId: 'saas_hr'
+    }
+});
+export const downloader = async (
+    url: string,
+    resOpts: AxiosRequestConfig
+): Promise<AxiosResponse<any>> => {
+    const { method = 'get', data = '' } = resOpts;
+    const queryArgs = {
+        url,
+        method,
+        data
+        // headers: {
+        //     [userStore.tokenHeader]: userStore.token
+        // }
+    };
+    return downFile.request(queryArgs);
+};
 
 export default service;

@@ -3,12 +3,12 @@
         <div class="searchBox">
             <el-input
                 v-model="input"
-                placeholder="有问题找度娘"
+                placeholder=""
                 clearable
                 @input="inputChange"
                 @keyup.enter.native="searchBtn"
             />
-            <el-button type="primary" @click="searchBtn">百度一下</el-button>
+            <el-button type="primary" @click="searchBtn">搜索</el-button>
         </div>
         <div v-if="ulData.length" class="ulBox">
             <ul>
@@ -51,15 +51,12 @@
 <style lang="less" setup>
     .search {
         width: 100%;
-        height: 100%;
         display: flex;
         flex-direction: column;
         align-items: center;
         padding-top: 10px;
         box-sizing: border-box;
-        // background: url(../../assets/backimg.png);
-        // background-repeat: no-repeat;
-        // background-size: 100% 100%;
+
         .searchBox {
             width: 500px;
             display: flex;
@@ -72,18 +69,21 @@
             width: 400px;
             border: 1px solid #ccc;
             margin-right: 96px;
+            background: #fff;
+            z-index: 999;
             ul {
                 width: 100%;
                 list-style: none;
                 padding-inline-start: 5px;
                 text-align: left;
+
                 li {
                     width: 98%;
                     float: left;
                     margin-bottom: 10px;
                     &:hover {
-                        background-color: #ccc;
-                        color: rgb(81, 109, 223);
+                        background-color: #e6f7ff;
+                        color: #1890ff;
                     }
                 }
             }
