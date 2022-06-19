@@ -61,10 +61,10 @@ export function request(url = '', params = {}, type = 'POST') {
         }
         //处理返回
         promise
-            .then((res) => {
+            .then((res: any) => {
                 resolve(res);
             })
-            .catch((err) => {
+            .catch((err: any) => {
                 reject(err);
             });
     });

@@ -19,11 +19,11 @@ export class UserService {
         return request('https://api.emoao.com/api/60s', params, 'get');
     }
     static gitweiboHot() {
-        return request('/api/ajax/side/hotSearch', null, 'get');
+        return request('/api/ajax/side/hotSearch', {} as unknown as undefined, 'get');
     }
     //随机壁纸
     static getBackground() {
-        return request('https://qqlykm.cn/api/bing/get', null, 'get');
+        return request('https://qqlykm.cn/api/bing/get', {} as unknown as undefined, 'get');
     }
     //摸鱼日历
     static getmoyuSrc(params: any) {
@@ -36,7 +36,7 @@ export class UserService {
 
     //历史上的今天
     static lishiDay() {
-        return request('https://api.emoao.com/api/lsjr', null, 'get');
+        return request('https://api.emoao.com/api/lsjr', {} as unknown as undefined, 'get');
     }
     // 查看敏感文件公共接口
     static getPrivateFile(params: { fileName: string }) {
@@ -53,7 +53,7 @@ export class landRelevant {
      * @description 获取地列表
      * @return {HttpResponse} result
      */
-    static async landList(params) {
+    static async landList(params: any) {
         return request('/land_list_info', params, 'get');
     }
 }

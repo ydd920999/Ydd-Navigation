@@ -12,7 +12,6 @@
     import HotList from '@/components/hotList/index.vue';
     import { UserService } from '/src/api/api.ts';
     import request from '@/utils/axios';
-    import jsonp from 'jsonp';
 
     const moyuUrl = ref('');
     const hotList = ref<any>([]);
