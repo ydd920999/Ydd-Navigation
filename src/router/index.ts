@@ -51,16 +51,16 @@ const routes: Array<RouteRecordRaw> = [
         },
         component: () => import('@/pages/yddTop.vue')
     },
-    {
-        path: '/ydd',
-        name: 'Ydd',
-        meta: {
-            title: '毅帝帝',
-            keepAlive: true,
-            requireAuth: true
-        },
-        component: () => import('@/pages/searchInput/index.vue')
-    }
+    // {
+    //     path: '/ydd',
+    //     name: 'Ydd',
+    //     meta: {
+    //         title: '毅帝帝',
+    //         keepAlive: true,
+    //         requireAuth: true
+    //     },
+    //     component: () => import('@/pages/searchInput/index.vue')
+    // }
 ];
 
 const router = createRouter({
