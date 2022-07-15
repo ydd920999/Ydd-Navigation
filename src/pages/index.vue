@@ -2,6 +2,9 @@
     <div class="container">
         <SearchInput />
         <HotList :list="weiboData" @refresh="weibo" />
+        <div class="timeDateBox">
+            <TimeDate />
+        </div>
     </div>
 </template>
 
@@ -10,6 +13,7 @@
     import UsePinia from '@/components/UsePinia.vue';
     import SearchInput from '@/components/searchInput/index.vue';
     import HotList from '@/components/hotList/index.vue';
+    import TimeDate from '@/components/timeDate/index.vue';
     import { UserService } from '/src/api/api.ts';
     import request from '@/utils/axios';
 
@@ -71,7 +75,6 @@
         box-sizing: border-box;
         // background: url(@/assets/wallhaven-nk6l8m_2560x1440.png);//老虎
         background: url(@/assets/wallhaven-g8rd8d_2560x1440.png); //云
-
         background-repeat: no-repeat;
         background-size: 100% 100%;
         & > :first-child {
@@ -81,6 +84,13 @@
         }
         .HotBox {
             flex: 1;
+        }
+        position: relative;
+        .timeDateBox {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            display: flex;
         }
     }
 </style>

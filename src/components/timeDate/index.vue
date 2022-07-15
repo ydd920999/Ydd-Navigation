@@ -1,12 +1,10 @@
 <template>
-    <div id="app">
-        <div class="crayon-clock">
-            <div class="crayon-clock-time">{{ time }}</div>
-            <div class="crayon-clock-date">
-                <span class="date">{{ date }}</span>
-                <span class="week">{{ week }}</span>
-            </div>
+    <div class="crayon-clock">
+        <div class="crayon-clock-date">
+            <span class="date">{{ date }}</span>
+            <span class="week">{{ week }}</span>
         </div>
+        <div class="crayon-clock-time">{{ time }}</div>
     </div>
 </template>
 
@@ -61,43 +59,21 @@
     };
 </script>
 
-<style>
-    html,
-    body {
-        height: 100%;
-        margin: 0;
-    }
-    body {
-        background: #0f3854;
-        background: radial-gradient(ellipse at center, #0a2e38 0%, #000000 70%);
-        background-size: 100%;
-    }
-    #app {
-        text-align: center;
-        color: #2c3e50;
-        margin-top: 60px;
-    }
-
+<style lang="less">
     .crayon-clock {
         font-family: -apple-system, BlinkMacSystemFont, Roboto, Open Sans, Helvetica Neue,
             sans-serif;
         color: #fff;
-        text-align: center;
-        position: absolute;
-        left: 50%;
-        top: 50%;
-        -webkit-transform: translate(-50%, -50%);
-        transform: translate(-50%, -50%);
-        color: #daf6ff;
-        text-shadow: 0 0 20px #0aafe6, 0 0 20px rgba(10, 175, 230, 0);
-    }
-    .crayon-clock-time {
-        letter-spacing: 0.05em;
-        font-size: 24px;
-        padding: 20px 0 0;
-    }
-    .crayon-clock-date {
-        letter-spacing: 0.1em;
-        font-size: 24px;
+        font-size: 16px;
+        display: flex;
+        align-items: center;
+        .crayon-clock-time {
+            margin-left: 10px;
+        }
+        .crayon-clock-date {
+            :nth-child(1) {
+                margin-right: 5px;
+            }
+        }
     }
 </style>
