@@ -45,9 +45,17 @@ export class UserService {
             params
         });
     }
-    //
-    static geiweiboHot() {
+    //微博热搜
+    static getweiboHot() {
         return request('https://api.emoao.com/api/wbrs', {} as unknown as undefined, 'get');
+    }
+    //IP签名
+    static getipImg() {
+        return request('https://api.emoao.com/api/ipqmd', {} as unknown as undefined, 'get');
+    }
+    //获取访客信息
+    static getipipinfo() {
+        return request('https://api.emoao.com/api/ipinfo', {} as unknown as undefined, 'get');
     }
 }
 

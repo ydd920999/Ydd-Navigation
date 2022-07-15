@@ -77,6 +77,7 @@
         .refresh {
             display: flex;
             align-items: center;
+            cursor: pointer;
             span {
                 color: #939393;
                 font-size: 12px;
