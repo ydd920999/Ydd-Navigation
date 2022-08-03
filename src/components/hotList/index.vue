@@ -23,7 +23,9 @@
                 </div>
                 <span v-if="item.heatnum" class="hot">
                     {{
-                        item.heatnum.toString().length == 7
+                        item.heatnum.toString().length == 8
+                            ? Math.round(item.heatnum.toString().slice(0, 4)) + '万'
+                            : item.heatnum.toString().length == 7
                             ? Math.round(item.heatnum.toString().slice(0, 3)) + '万'
                             : Math.round(item.heatnum.toString().slice(0, 2)) + '万'
                     }}
@@ -94,7 +96,7 @@
         align-items: center;
         padding-bottom: 2px;
         .ellipsislink {
-            width: 230px;
+            width: 220px;
             a {
                 width: 100%;
                 font-size: 15px;
