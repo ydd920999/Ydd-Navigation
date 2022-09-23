@@ -55,7 +55,7 @@
     async function weibo() {
         const res = await UserService.getweiboHot();
         if (res.status == '200') {
-            const data = res.data;
+            const data = res.data.data;
             weiboData.value = data.slice(0, 10);
         }
     }
@@ -77,10 +77,10 @@
             deep: true // 深度监听的参数
         }
     );
+    //获取IP
     async function getipipinfo() {
         const res = await UserService.getipipinfo();
         if (res.status == '200') {
-            console.log(res, 'resss');
             ipipinfo.value = res.data;
         }
     }
