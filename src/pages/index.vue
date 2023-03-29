@@ -1,7 +1,14 @@
 <template>
     <div class="container">
         <SearchInput />
-        <HotList :list="weiboData" @refresh="weibo" />
+        <div class="con">
+            <div class="hotListBox">
+                <HotList :list="weiboData" @refresh="weibo" />
+            </div>
+            <div class="WeatherBox">
+                <Weather />
+            </div>
+        </div>
         <div class="timeDateBox">
             <TimeDate />
         </div>
@@ -14,6 +21,7 @@
     import SearchInput from '@/components/searchInput/index.vue';
     import HotList from '@/components/hotList/index.vue';
     import TimeDate from '@/components/timeDate/index.vue';
+    import Weather from '@/components/Weather/index.vue';
     import { UserService } from '/src/api/api.ts';
     import request from '@/utils/axios';
     import { ElNotification } from 'element-plus';
@@ -141,6 +149,10 @@
             height: 200px;
             color: #fff;
             background: red;
+        }
+        .con {
+            display: flex;
+            justify-content: space-between;
         }
     }
 </style>
