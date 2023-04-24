@@ -20,6 +20,16 @@ const routes: Array<RouteRecordRaw> = [
             requireAuth: true
         },
         component: () => import('@/pages/vueUse.vue')
+    },
+    {
+        path: '/shapeShifter',
+        name: 'ShapeShifter',
+        meta: {
+            title: '粒子',
+            keepAlive: true,
+            requireAuth: true
+        },
+        component: () => import('@/pages/ShapeShifter.vue')
     }
 ];
 

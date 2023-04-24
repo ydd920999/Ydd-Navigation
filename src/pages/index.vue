@@ -12,6 +12,11 @@
         <div class="timeDateBox">
             <TimeDate />
         </div>
+        <div class="btn" @click="goShapeShifter"
+            >ShapeShifter
+
+            <div class="btn2"></div>
+        </div>
     </div>
 </template>
 
@@ -27,9 +32,11 @@
     import { ElNotification } from 'element-plus';
     import { useRoute, useRouter } from 'vue-router';
 
+    const route = useRoute();
+    const router = useRouter();
+
     const moyuUrl = ref('');
     const moyuTit = ref('');
-    const router = useRouter();
     const hotList = ref<any>([]);
     const weiboData = ref<any>([]);
     const ipipinfo = ref<any>(null);
@@ -112,6 +119,11 @@
         // https://pic.rmb.bdstatic.com/bjh/6ebafcd214a487a7bb78b19f4c877a99.png
         // https://pic.imgdb.cn/item/62d04111f54cd3f9373fc390.png
     }
+    function goShapeShifter() {
+        router.push({
+            name: 'ShapeShifter'
+        });
+    }
 </script>
 <style lang="less" scoped>
     .container {
@@ -139,6 +151,7 @@
             top: 10px;
             right: 10px;
             display: flex;
+            flex-direction: column;
             :nth-child(2) {
                 margin-left: 10px;
                 color: #fff;
@@ -153,6 +166,61 @@
         .con {
             display: flex;
             justify-content: space-between;
+            .WeatherBox {
+                margin-top: 20px;
+            }
+        }
+
+        .btn,
+        .btn2 {
+            color: rgba(255, 255, 255, 0.9);
+            border-radius: 50px;
+            width: 200px;
+            height: 40px;
+            font-size: 24px;
+            text-align: center;
+            line-height: 40px;
+            background: linear-gradient(-45deg, #ffa63d, #ff3d77, #338aff, #3cf0c5);
+            background-size: 600%;
+            -webkit-animation: anime 6s linear infinite;
+            animation: anime 6s linear infinite;
+        }
+        .btn2 {
+            position: absolute;
+            margin-top: -40px;
+            z-index: -1;
+            filter: blur(30px);
+            opacity: 0.8;
+        }
+        .btn {
+            position: absolute;
+            top: 5px;
+            right: 250px;
+            cursor: pointer;
+        }
+        @keyframes anime {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            00% {
+                background-position: 0% 50%;
+            }
+        }
+        @-webkit-keyframes anime {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
         }
     }
 </style>
