@@ -45,17 +45,17 @@ export class UserService {
             params
         });
     }
-    //微博热搜
-    static getweiboHot() {
-        return request('https://api.emoao.com/api/wbrs', {} as unknown as undefined, 'get');
-    }
-    //IP签名
-    static getipImg() {
-        return request('https://api.emoao.com/api/ipqmd', {} as unknown as undefined, 'get');
-    }
     //获取访客信息
-    static getipipinfo() {
-        return request('https://api.emoao.com/api/ipinfo', {} as unknown as undefined, 'get');
+    static getipUserInfo() {
+        return request(
+            'https://api.qqij.cn/Api/UserInfo?format=json',
+            {} as unknown as undefined,
+            'get'
+        );
+    }
+    //微博
+    static getweibo() {
+        return request('https://hotapi.yddwd.com/weibo/', {} as unknown as undefined, 'get');
     }
 }
 

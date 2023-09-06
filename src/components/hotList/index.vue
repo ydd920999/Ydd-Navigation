@@ -21,27 +21,15 @@
                         <a>{{ index + 1 + '、' + item.title }}</a>
                     </el-tooltip>
                 </div>
-                <span v-if="item.heatnum" class="hot">
+                <span v-if="item.hot" class="hot">
                     {{
-                        item.heatnum.toString().length == 8
-                            ? Math.round(item.heatnum.toString().slice(0, 4)) + '万'
-                            : item.heatnum.toString().length == 7
-                            ? Math.round(item.heatnum.toString().slice(0, 3)) + '万'
-                            : Math.round(item.heatnum.toString().slice(0, 2)) + '万'
+                        item.hot.toString().length == 8
+                            ? Math.round(item.hot.toString().slice(0, 4)) + '万'
+                            : item.hot.toString().length == 7
+                            ? Math.round(item.hot.toString().slice(0, 3)) + '万'
+                            : Math.round(item.hot.toString().slice(0, 2)) + '万'
                     }}
                 </span>
-                <div v-if="item.labelname" class="tab">
-                    <span
-                        :class="
-                            item.labelname === '爆'
-                                ? 'bao'
-                                : item.labelname === '新'
-                                ? 'xin'
-                                : 'fei'
-                        "
-                        >{{ item.labelname }}</span
-                    >
-                </div>
             </div>
         </el-card>
     </div>
@@ -96,7 +84,7 @@
         align-items: center;
         padding-bottom: 2px;
         .ellipsislink {
-            width: 220px;
+            width: 260px;
             a {
                 width: 100%;
                 font-size: 15px;

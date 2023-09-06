@@ -30,6 +30,16 @@ const routes: Array<RouteRecordRaw> = [
             requireAuth: true
         },
         component: () => import('@/pages/ShapeShifter.vue')
+    },
+    {
+        path: '/encyclopedia',
+        name: 'Encyclopedia',
+        meta: {
+            title: '问道百科全书',
+            keepAlive: true,
+            requireAuth: true
+        },
+        component: () => import('@/pages/Encyclopedia.vue')
     }
 ];
 
