@@ -1,15 +1,25 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router';
 
 const routes: Array<RouteRecordRaw> = [
+    // {
+    //     path: '/',
+    //     name: 'IndexPage',
+    //     meta: {
+    //         title: '首页',
+    //         keepAlive: true,
+    //         requireAuth: true
+    //     },
+    //     component: () => import('@/pages/index1.vue')
+    // },
     {
         path: '/',
-        name: 'IndexPage',
+        name: 'Encyclopedia',
         meta: {
             title: '首页',
             keepAlive: true,
             requireAuth: true
         },
-        component: () => import('@/pages/index.vue')
+        component: () => import('@/pages/Encyclopedia.vue')
     },
     {
         path: '/vueUse',
@@ -30,17 +40,17 @@ const routes: Array<RouteRecordRaw> = [
             requireAuth: true
         },
         component: () => import('@/pages/ShapeShifter.vue')
-    },
-    {
-        path: '/encyclopedia',
-        name: 'Encyclopedia',
-        meta: {
-            title: '问道百科全书',
-            keepAlive: true,
-            requireAuth: true
-        },
-        component: () => import('@/pages/Encyclopedia.vue')
     }
+    // {
+    //     path: '/encyclopedia',
+    //     name: 'Encyclopedia',
+    //     meta: {
+    //         title: '问道百科全书',
+    //         keepAlive: true,
+    //         requireAuth: true
+    //     },
+    //     component: () => import('@/pages/Encyclopedia.vue')
+    // }
 ];
 
 const router = createRouter({

@@ -31,7 +31,7 @@
                 <li>添加问题</li>
                 <li>进游戏交流群</li>
             </ul>
-            <h4>请加我微信与我联系</h4>
+            <h3>请加我微信与我联系</h3>
             <el-descriptions direction="vertical" :column="4" border>
                 <el-descriptions-item>
                     <template #label>
@@ -65,6 +65,19 @@
                     二O一七
                 </el-descriptions-item>
             </el-descriptions>
+            <h3>更多项目</h3>
+            <ul>
+                <li
+                    ><a href="https://start.yddwd.com" target="_blank" class="custom-link"
+                        >导航</a
+                    ></li
+                >
+                <li
+                    ><a href="https://hot.yddwd.com" target="_blank" class="custom-link"
+                        >今日热点</a
+                    ></li
+                >
+            </ul>
         </el-drawer>
 
         <el-backtop :right="100" :bottom="100" />
@@ -749,9 +762,9 @@
                 background-position: 0% 50%;
             }
         }
-
-        // :deep(.el-drawer) {
-        //     width: 60% !important;
-        // }
+        .custom-link {
+            color: #42b983;
+            text-decoration: none;
+        }
     }
 </style>
