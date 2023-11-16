@@ -296,7 +296,7 @@
             letter: 'N'
         },
         {
-            problem: '哪些仙人常说：“红尘休闲的正道，蓬莱仙境乐逍遥?八仙',
+            problem: '哪些仙人常说：“红尘休闲的正道，蓬莱仙境乐逍遥?',
             answer: '八仙',
             letter: 'N'
         },
@@ -526,18 +526,18 @@
             letter: 'X'
         },
         {
-            problem: '现代奥运会的创始人是?顾拜旦',
-            answer: '范仲淹',
+            problem: '现代奥运会的创始人是?',
+            answer: '顾拜旦',
             letter: 'X'
         },
         {
-            problem: '玄武”改称为“真武”是因为什么?避讳',
-            answer: '范仲淹',
+            problem: '玄武”改称为“真武”是因为什么?',
+            answer: '避讳',
             letter: 'X'
         },
         {
-            problem: '暹罗是哪个国家的旧称?泰国',
-            answer: '范仲淹',
+            problem: '暹罗是哪个国家的旧称?',
+            answer: '泰国',
             letter: 'X'
         },
         {
@@ -694,6 +694,8 @@
 
     onMounted(() => {
         getipipinfo();
+        const strContent = getComputedStyle(document.body, '::before').content;
+        console.log(strContent, 'strContent');
     });
 </script>
 <style lang="less" scoped>

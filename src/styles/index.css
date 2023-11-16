@@ -13,3 +13,9 @@
     height: 100%;
     background-color: #fff !important;
 } */
+@media (any-hover: none) {
+  body::before {
+      content: 'hoverNone';
+      display: none;
+  }
+}
